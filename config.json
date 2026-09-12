@@ -1,7 +1,7 @@
 {
   "name": "meshcentral for graylord",
   "shortName": "powerLog",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "llp2",
   "description": "Example and template for usage of MeshCentral-PluginHookScheduler",
   "hasAdminPanel": false,
