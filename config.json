@@ -1,33 +1,18 @@
 {
-  "$schema": "https://raw.githubusercontent.com/Ylianst/MeshCentral/master/meshcentral-config-schema.json",
-  "settings": {
-    "plugins": {
-      "enabled": true,
-      "pluginSettings": {
-        "pluginhookscheduler": {
-          "backendhooks": [
-            ["server_startup", []],
-            ["hook_setupHttpHandlers", []],
-            ["hook_userLoggedIn", []],
-            ["hook_processAgentData", []],
-            ["hook_agentCoreIsStable", []],
-            ["hook_beforeCreateMeshAgent", []],
-            ["hook_afterCreateMeshAgent", []],
-            ["hook_beforeCreateMeshRelay", []],
-            ["hook_afterCreateMeshRelay", []],
-            ["hook_beforeCreateLocalRelay", []],
-            ["hook_afterCreateLocalRelay", []],
-            ["hook_beforeCreateMeshUser", []],
-            ["hook_afterCreateMeshUser", []],
-            ["hook_beforeNotifyUserOfDeviceStateChange", []],
-            ["hook_afterNotifyUserOfDeviceStateChange", []],
-            ["*", []]
-          ],
-          "webuihooks": [
-            ["#", ["NOT IMPLEMENTED YET"]]
-          ]
-        }
-      }
-    }
-  }
+  "name": "Plugin Hook Example",
+  "shortName": "pluginhookexample",
+  "version": "0.0.3",
+  "author": "Daniel Hammerschmidt",
+  "description": "Example and template for usage of MeshCentral-PluginHookScheduler",
+  "hasAdminPanel": false,
+  "homepage": "https://github.com/bitctrl/MeshCentral-PluginHookExample",
+  "changelogUrl": "https://raw.githubusercontent.com/bitctrl/MeshCentral-PluginHookExample/main/CHANGELOG.md",
+  "configUrl": "https://raw.githubusercontent.com/bitctrl/MeshCentral-PluginHookExample/main/config.json",
+  "downloadUrl": "https://github.com/bitctrl/MeshCentral-PluginHookExample/archive/main.zip",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bitctrl/MeshCentral-PluginHookExample.git"
+  },
+  "versionHistoryUrl": "https://github.com/bitctrl/MeshCentral-PluginHookExample/tags",
+  "meshCentralCompat": ">=1.1.36"
 }
