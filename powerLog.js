@@ -135,7 +135,7 @@ module2.exports[PLUGIN_2_SHORT_NAME] = function (pluginHandler) {
     hook_afterCreateMeshUser(meshuser, parent, db, ws, req, args, domain, user) {
       return console.log(new Date().toISOString(), 'hook_afterCreateMeshUser'), meshuser;
     },
-    hook_beforeNotifyUserOfDeviceStateChange(__, nodeid, connectTime, connectType, powerState, serverid, stateSet, extraInfo) {
+     hook_beforeNotifyUserOfDeviceStateChange(__, nodeid, connectTime, connectType, powerState, serverid, stateSet, extraInfo) {
       console.log(new Date().toISOString(), 'hook_beforeNotifyUserOfDeviceStateChange', stateSet);
     },
     hook_afterNotifyUserOfDeviceStateChange(__, meshid, nodeid, connectTime, connectType, powerState, serverid, stateSet, extraInfo) {
