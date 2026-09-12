@@ -8,23 +8,14 @@
  * @author  Daniel Hammerschmidt <daniel@redneck-engineering.com>
  * @version 0.0.3
  *********************************************************************/
-
 const { PLUGIN_SHORT_NAME } = require('../pluginhookscheduler')({
   __dirname,
   requiredPluginHooks: [
-    'hook_beforeCreateMeshAgent',
-    'hook_afterCreateMeshAgent',
-    'hook_beforeCreateMeshRelay',
-    'hook_afterCreateMeshRelay',
-    'hook_beforeCreateLocalRelay',
-    'hook_afterCreateLocalRelay',
-    'hook_beforeCreateMeshUser',
-    'hook_afterCreateMeshUser',
     'hook_beforeNotifyUserOfDeviceStateChange',
     'hook_afterNotifyUserOfDeviceStateChange',
-    'hook_agentWebSocketDisconnected',
   ],
 });
+
 
 // add hooks to configuration if not in config.json
 const { pluginConfig: hookSchedulerConfig } = require('../pluginhookscheduler')({__dirname: __dirname + '../pluginhookscheduler'});
