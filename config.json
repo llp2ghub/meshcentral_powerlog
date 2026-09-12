@@ -1,18 +1,21 @@
 {
-  "name": "Plugin Hook Example",
-  "shortName": "pluginhookexample",
-  "version": "0.0.3",
-  "author": "Daniel Hammerschmidt",
+  "name": "meshcentral for graylord",
+  "shortName": "meshtoGray",
+  "version": "0.0.1",
+  "author": "llp2",
   "description": "Example and template for usage of MeshCentral-PluginHookScheduler",
   "hasAdminPanel": false,
-  "homepage": "https://github.com/bitctrl/MeshCentral-PluginHookExample",
-  "changelogUrl": "https://raw.githubusercontent.com/bitctrl/MeshCentral-PluginHookExample/main/CHANGELOG.md",
-  "configUrl": "https://raw.githubusercontent.com/bitctrl/MeshCentral-PluginHookExample/main/config.json",
-  "downloadUrl": "https://github.com/bitctrl/MeshCentral-PluginHookExample/archive/main.zip",
+  "homepage": "https://github.com/llp2ghub/meshcentral_powerlog",
+  "changelogUrl": "https://raw.githubusercontent.com/llp2ghub/meshcentral_powerlog/main/CHANGELOG.md",
+  "configUrl": "https://raw.githubusercontent.com/llp2ghub/meshcentral_powerlog/main/config.json",
+  "downloadUrl": "https://github.com/llp2ghub/meshcentral-powerlog/archive/refs/heads/main.zip",
   "repository": {
     "type": "git",
-    "url": "https://github.com/bitctrl/MeshCentral-PluginHookExample.git"
+    "url": "https://github.com/llp2ghub/meshcentral_powerlog.git"
   },
-  "versionHistoryUrl": "https://github.com/bitctrl/MeshCentral-PluginHookExample/tags",
+  "versionHistoryUrl": "https://github.com/llp2ghub/meshcentral_powerlog/tags",
   "meshCentralCompat": ">=1.1.36"
 }
+
+
+ 
