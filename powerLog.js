@@ -135,13 +135,36 @@ module2.exports[PLUGIN_2_SHORT_NAME] = function (pluginHandler) {
     hook_afterCreateMeshUser(meshuser, parent, db, ws, req, args, domain, user) {
       return console.log(new Date().toISOString(), 'hook_afterCreateMeshUser'), meshuser;
     },
-hook_beforeNotifyUserOfDeviceStateChange(__, nodeid, connectTime, connectType, powerState, serverid, stateSet, extraInfo) {
-  console.log(new Date().toISOString(), 'hook_beforeNotifyUserOfDeviceStateChange', JSON.stringify({ nodeid, connectTime, connectType, powerState, serverid, stateSet, extraInfo }));
-},
-hook_afterNotifyUserOfDeviceStateChange(__, meshid, nodeid, connectTime, connectType, powerState, serverid, stateSet, extraInfo) {
-  console.log(new Date().toISOString(), 'hook_afterNotifyUserOfDeviceStateChange', JSON.stringify({ meshid, nodeid, connectTime, connectType, powerState, serverid, stateSet, extraInfo }));
-  return stateSet;
-},
+    hook_beforeNotifyUserOfDeviceStateChange(__, nodeid, connectTime, connectType, powerState, serverid, stateSet, extraInfo) {
+      console.log(new Date().toISOString(), 'hook_beforeNotifyUserOfDeviceStateChange', JSON.stringify({ nodeid, stateSet }));
+    },
+    hook_afterNotifyUserOfDeviceStateChange(__, meshid, nodeid, connectTime, connectType, powerState, serverid, stateSet, extraInfo) {
+      const dgram = require('node:dgram');
+
+      const payload = JSON.stringify({
+        version: '1.1',
+        host: 'meshcentral',
+        short_message: `${extraInfo?.name || nodeid} powered ${stateSet ? 'on' : 'off'}`,
+        timestamp: connectTime / 1000,
+        level: 6,
+        _nodeid: nodeid,
+        _meshid: meshid,
+        _devicename: extraInfo?.name,
+        _stateset: stateSet,
+        _powerstate: powerState,
+        _connecttype: connectType,
+        _remoteaddr: extraInfo?.remoteaddrport,
+      });
+
+      const message = Buffer.from(payload);
+      const client = dgram.createSocket('udp4');
+      client.send(message, 0, message.length, 12201, '192.168.50.104', (err) => {
+        if (err) console.log(new Date().toISOString(), 'Graylog UDP send error', err.message);
+        client.close();
+      });
+
+      return stateSet;
+    },
   };
 };
 
