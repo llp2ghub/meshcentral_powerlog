@@ -1,0 +1,33 @@
+{
+  "$schema": "https://raw.githubusercontent.com/Ylianst/MeshCentral/master/meshcentral-config-schema.json",
+  "settings": {
+    "plugins": {
+      "enabled": true,
+      "pluginSettings": {
+        "pluginhookscheduler": {
+          "backendhooks": [
+            ["server_startup", []],
+            ["hook_setupHttpHandlers", []],
+            ["hook_userLoggedIn", []],
+            ["hook_processAgentData", []],
+            ["hook_agentCoreIsStable", []],
+            ["hook_beforeCreateMeshAgent", []],
+            ["hook_afterCreateMeshAgent", []],
+            ["hook_beforeCreateMeshRelay", []],
+            ["hook_afterCreateMeshRelay", []],
+            ["hook_beforeCreateLocalRelay", []],
+            ["hook_afterCreateLocalRelay", []],
+            ["hook_beforeCreateMeshUser", []],
+            ["hook_afterCreateMeshUser", []],
+            ["hook_beforeNotifyUserOfDeviceStateChange", []],
+            ["hook_afterNotifyUserOfDeviceStateChange", []],
+            ["*", []]
+          ],
+          "webuihooks": [
+            ["#", ["NOT IMPLEMENTED YET"]]
+          ]
+        }
+      }
+    }
+  }
+}
