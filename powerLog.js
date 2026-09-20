@@ -158,7 +158,7 @@ module2.exports[PLUGIN_2_SHORT_NAME] = function (pluginHandler) {
 
       const message = Buffer.from(payload);
       const client = dgram.createSocket('udp4');
-      client.send(message, 0, message.length, 12201, '192.168.50.104', (err) => {
+      client.send(message, 0, message.length, 12201, '192.168.50.35', (err) => {
         if (err) console.log(new Date().toISOString(), 'Graylog UDP send error', err.message);
         client.close();
       });
