@@ -143,7 +143,7 @@ module2.exports[PLUGIN_2_SHORT_NAME] = function (pluginHandler) {
 
       const payload = JSON.stringify({
         version: '1.1',
-        host: 'meshcentral',
+        host: `${extraInfo?.name || 'unknown'}_meshcentral`,
         short_message: `${extraInfo?.name || nodeid} powered ${stateSet ? 'on' : 'off'}`,
         timestamp: connectTime / 1000,
         level: 6,
